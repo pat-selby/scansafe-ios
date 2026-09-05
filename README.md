@@ -4,7 +4,7 @@
 
 ScanSafe detects and risk-scores URLs hidden inside QR codes in real time using a classical OpenCV 4.13 computer vision pipeline and a 22-rule heuristic URL scoring engine. No cloud dependency. No pretrained ML models. Zero URL transmission.
 
-**Platform:** iOS (Swift 5 + SwiftUI) · Android (Kotlin) · Python prototype (CLI + Flask)
+**Platform:** Android (Kotlin + CameraX) · Python prototype (CLI + Flask web UI)
 **Research:** AIoT Lab, Grambling State University · Dr. Vasanth Iyer · April 2026
 
 ---
@@ -83,12 +83,19 @@ A quarantined GSU email contained `blob:https://outlook.office.com/...`. The ori
 
 ```
 scan-safe/
-└── scansafe/
+├── android/                     # Kotlin Android app (CameraX + OpenCV)
+│   └── app/src/main/java/com/patselby/scansafe/
+│       ├── MainActivity.kt      # Entry point, camera permissions
+│       ├── CameraFragment.kt    # Live camera feed
+│       ├── QRScanner.kt         # OpenCV decode pipeline
+│       ├── URLRiskScorer.kt     # 22-rule scoring engine (Kotlin port)
+│       └── ResultFragment.kt    # Verdict UI
+└── scansafe/                    # Python prototype and research
     ├── app.py                  # Flask web UI + REST API (POST /scan)
     ├── scansafe_prototype.py   # Full 22-rule engine + OpenCV QR decode (CLI)
     ├── sensor_log.py           # Device motion logger (accel + gyro → CSV, EMA)
     ├── assets/
-    │   ├── screenshots/        # Live app screenshots (iOS)
+    │   ├── screenshots/        # Live app screenshots
     │   └── images/             # Test QR code images
     ├── data/
     │   └── phishing_corpus.txt # 28-URL evaluation corpus

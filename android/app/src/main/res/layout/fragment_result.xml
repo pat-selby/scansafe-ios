@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Circle Background inside a square bounds -->
+    <View
+        android:id="@+id/verdictCircle"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/bg_circle" />
+
+    <!-- Verdict Text placed over the circle -->
+    <TextView
+        android:id="@+id/verdictTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/verdictCircle"
+        android:layout_alignBottom="@id/verdictCircle"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="SAFE"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <!-- Reason text below the circle -->
+    <TextView
+        android:id="@+id/reasonTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verdictCircle"
+        android:layout_marginTop="32dp"
+        android:text="Reason goes here"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <!-- URL text below the reason -->
+    <TextView
+        android:id="@+id/urlTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reasonTextView"
+        android:layout_marginTop="16dp"
+        android:text="https://example.com"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textColor="#808080" />
+
+    <!-- Button at the bottom -->
+    <Button
+        android:id="@+id/scanAgainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:padding="16dp"
+        android:text="Scan Again" />
+
+</RelativeLayout>

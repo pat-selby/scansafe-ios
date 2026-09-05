@@ -1,29 +1,15 @@
-.DS_Store
-build/
-*.xcuserstate
-DerivedData/
-Pods/
-*.xcworkspace/xcuserdata
-.idea/
-scansafe-token-github.txt
-
 # Python
-.venv/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+.venv/
+venv/
+.env
 
-# Internal / full-length reports — not for distribution
-scansafe/docs/ScanSafe_NSF_Research_Report.pdf
-scansafe/docs/ScanSafe_NSF_Research_Report_v3.pdf
-
-# Private course materials
-project_inst/
-research/
-
-# AI coding directives and local IDE settings
-claude.md
-.claude/
-
-# Runtime output
-sensor_data.csv
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+.idea/
+*.iml
+.DS_Store
